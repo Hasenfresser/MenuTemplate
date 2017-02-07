@@ -1,15 +1,24 @@
 /**
 *   @file       getChar.cpp
 *   @author     Hasenfresser
-*   @version    under construction
-*   @date       2017-02-01
+*   @version    1.01
+*   @date       2017-02-08
 *
 *   @brief      Source file of getChar function.
 */
 
 #include "getChar.hpp"
 
+#ifdef LINUX
+
 #include <termios.h>
+
+#elif defined WINDOWS
+
+#include <conio.h>
+
+#endif
+
 #include <iostream>
 #include <unistd.h>
 
@@ -41,8 +50,6 @@ int8_t getChar() {
     return Output;
 
     #elif defined WINDOWS
-
-    #include <conio.h>
 
     return getch();
 

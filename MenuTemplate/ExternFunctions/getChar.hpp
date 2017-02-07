@@ -1,8 +1,8 @@
 /**
 *   @file       getChar.hpp
 *   @author     Hasenfresser
-*   @version    under construction
-*   @date       2017-02-01
+*   @version    1.01
+*   @date       2017-02-08
 *
 *   @brief      Header file of getChar function.
 */
@@ -11,10 +11,10 @@
 #if !defined GETCHAR_HPP
 #define GETCHAR_HPP
 
-#include <cstdint>
-
 // define LINUX or WINDOWS
 #define LINUX
+
+#include <cstdint>
 
 /**
  *  @namespace  ExternFunctions

@@ -1,8 +1,8 @@
 /**
  *  @file       Entry.cpp
  *  @author     Hasenfresser
- *  @version    under construction
- *  @date       2016-01-24
+ *  @version    1.01
+ *  @date       2016-02-08
  *
  *  @brief      Source file of subclass Entry.
  */

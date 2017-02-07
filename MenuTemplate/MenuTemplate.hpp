@@ -1,8 +1,8 @@
 /**
  *  @file       MenuTemplate.hpp
  *  @author     Hasenfresser
- *  @version    under construction
- *  @date       2016-02-01
+ *  @version    1.01
+ *  @date       2016-02-08
  *
  *  @brief      Header file of MenuTemplate class.
  */
@@ -12,6 +12,9 @@
 
 using std::vector;
 using std::string;
+
+// define LINUX or WINDOWS
+#define LINUX
 
 /**
  *  @namespace  MenuTemplate
@@ -28,9 +31,23 @@ namespace MenuTemplate {
  */
 const string CLEAR_SCREEN_LINUX = "\033[2J\033[1;1H";
 
+#ifdef LINUX
+
 const int8_t ENTRY_UP = 'A';
 const int8_t ENTRY_DOWN = 'B';
 const int8_t ENTRY_SELECT = '\n';
+
+#elif defined WINDOWS
+
+const int8_t ENTRY_UP = 72;
+const int8_t ENTRY_DOWN = 80;
+const int8_t ENTRY_SELECT = 13;
+
+#else
+
+#error: No OS defined!
+
+#endif // LINUX
 
 /**
  *  @class      MenuTemplate

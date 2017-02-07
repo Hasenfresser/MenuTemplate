@@ -1,8 +1,8 @@
 /**
  *  @file       MenuTemplate.cpp
  *  @author     Hasenfresser
- *  @version    under construction
- *  @date       2016-02-01
+ *  @version    1.01
+ *  @date       2016-02-08
  *
  *  @brief      Source file of MenuTemplate class.
  */
@@ -16,6 +16,12 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+
+#ifdef WINDOWS
+
+#include <cstdlib>
+
+#endif // WINDOWS
 
 using std::cout;
 using std::endl;
