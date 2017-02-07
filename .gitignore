@@ -1,29 +1,13 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# binaries
+/bin
 
-# Precompiled Headers
-*.gch
-*.pch
+# object files
+/obj
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# CodeBlocks files
+*.cbp
+*.depend
+*.layout
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# compiled doc files
+/doc
