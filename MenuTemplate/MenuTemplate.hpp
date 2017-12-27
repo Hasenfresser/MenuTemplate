@@ -14,7 +14,7 @@ using std::vector;
 using std::string;
 
 // define LINUX or WINDOWS
-#define LINUX
+#define WINDOWS
 
 /**
  *  @namespace  MenuTemplate
@@ -33,15 +33,15 @@ const string CLEAR_SCREEN_LINUX = "\033[2J\033[1;1H";
 
 #ifdef LINUX
 
-const int8_t ENTRY_UP = 'A';
-const int8_t ENTRY_DOWN = 'B';
-const int8_t ENTRY_SELECT = '\n';
+const char ENTRY_UP = 'A';
+const char ENTRY_DOWN = 'B';
+const char ENTRY_SELECT = '\n';
 
 #elif defined WINDOWS
 
-const int8_t ENTRY_UP = 72;
-const int8_t ENTRY_DOWN = 80;
-const int8_t ENTRY_SELECT = 13;
+const char ENTRY_UP = 72;
+const char ENTRY_DOWN = 80;
+const char ENTRY_SELECT = 13;
 
 #else
 
@@ -132,7 +132,7 @@ private:
      *  Position must be a value from 0 to number of entries - 1.
      *  Initial value is 0.
      */
-    uint16_t CursorStartPosition = 0;
+    int CursorStartPosition = 0;
 
     /**
      *  @brief      Cursor of menu.
@@ -200,7 +200,7 @@ private:
      *  New entry text must not be empty.
      *  New entry position must be a value from 0 to number of entries - 1. If set bigger, it will be added to the end.
      */
-    void addEntry(const string Name, const string Text, const uint16_t Position);
+    void addEntry(const string Name, const string Text, const int Position);
 
     /**
      *  @brief      Deletes entry from menu by name.
@@ -218,7 +218,7 @@ private:
      *
      *  If entry position was not found, it will be not deleted.
      */
-    void deleteEntry(const uint16_t Position);
+    void deleteEntry(const int Position);
 
     /**
      *  @brief      Edits entry text.
@@ -239,7 +239,7 @@ private:
      *  New entry position must be a value from 0 to number of entries - 1.
      *  If entry name was not found or if new entry position is not valid, it will be not edited.
      */
-    void editEntry(const string Name, const uint16_t Position);
+    void editEntry(const string Name, const int Position);
 
     /**
      *  @brief      Edits entry text and position.
@@ -251,7 +251,7 @@ private:
      *  New entry position must be a value from 0 to number of entries - 1.
      *  If entry name was not found, if new entry text is empty or if new entry position is not valid, it will be not edited.
      */
-    void editEntry(const string Name, const string Text, const uint16_t Position);
+    void editEntry(const string Name, const string Text, const int Position);
 
     /**
      *  @brief      Renames entry name.
@@ -281,7 +281,7 @@ private:
      *
      *  If entry name A or entry position B were not found found, they will be not swapped.
      */
-    void swapEntries(const string NameA, const uint16_t PositionB);
+    void swapEntries(const string NameA, const int PositionB);
 
     /**
      *  @brief      Swaps two entries by position and name.
@@ -291,7 +291,7 @@ private:
      *
      *  If entry position A or entry name B were not found found, they will be not swapped.
      */
-    void swapEntries(const uint16_t PositionA, const string NameB);
+    void swapEntries(const int PositionA, const string NameB);
 
     /**
      *  @brief      Swaps two entries by position.
@@ -301,7 +301,7 @@ private:
      *
      *  If entry position A or entry position B were not found found, they will be not swapped.
      */
-    void swapEntries(const uint16_t PositionA, const uint16_t PositionB);
+    void swapEntries(const int PositionA, const int PositionB);
 
     /**
      *  @brief      Sets Cursor.
@@ -319,12 +319,12 @@ private:
      *
      *  If cursor start position is not a value from 0 to number of entries - 1, it will not be set.
      */
-    void setCursorStartPosition(const uint16_t CursorStartPosition);
+    void setCursorStartPosition(const int CursorStartPosition);
 
     /**
      *  @brief      Returns actual cursor startposition.
      */
-    uint16_t getCursorStartPosition();
+    int getCursorStartPosition();
 
     /**
      *  @brief      Returns actual cursor as string.
@@ -351,7 +351,7 @@ private:
      *  If there is only one entry in the menu, the position 0 will be returned instantly without displaying the menu.
      *  If there are no entries in the menu, the returned position is -1.
      */
-    int16_t displayGetPosition();
+    int displayGetPosition();
 
     /**
      *  @brief      Returns number of entries.
@@ -360,6 +360,6 @@ private:
      *
      *  Size is always a value from 0 to number of entries.
      */
-    uint16_t getNumberOfEntries();
+    int getNumberOfEntries();
 };
 } // end namespace

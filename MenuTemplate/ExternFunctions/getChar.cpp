@@ -24,10 +24,10 @@
 
 namespace ExternFunctions {
 
-int8_t getChar() {
-    int8_t Output = 0;
-
+char getChar() {
     #if defined LINUX
+
+    char Output = 0;
 
     struct termios old = {0};
     fflush(stdout);

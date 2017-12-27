@@ -12,7 +12,7 @@
 #define GETCHAR_HPP
 
 // define LINUX or WINDOWS
-#define LINUX
+#define WINDOWS
 
 #include <cstdint>
 
@@ -28,7 +28,7 @@ namespace ExternFunctions {
 *
 *   @return     Char of pressed key.
 */
-int8_t getChar();
+char getChar();
 
 } // end namespace
 

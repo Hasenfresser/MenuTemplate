@@ -56,7 +56,7 @@ void MenuTemplate::addEntry(const string Name, const string Text) {
     addEntry(Name, Text, Entries.size());
 }
 
-void MenuTemplate::addEntry(const string Name, const string Text, const uint16_t Position) {
+void MenuTemplate::addEntry(const string Name, const string Text, const int Position) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -67,7 +67,7 @@ void MenuTemplate::addEntry(const string Name, const string Text, const uint16_t
             throw string("Entry text must not be empty!");
 
         // Testing, if Name is unique. If false: exception
-        for(uint16_t Counter = 0; Counter < Entries.size(); ++Counter)
+        for(int Counter = 0; Counter < Entries.size(); ++Counter)
             if(Entries[Counter].getName() == Name)
                 throw string("Entry name must be unique!\nTriggering entry name: " + Name);
 
@@ -92,7 +92,7 @@ void MenuTemplate::deleteEntry(const string Name) {
             throw string("Entry name must not be empty!");
 
         // Searching for entry to be deleted.
-        for(uint16_t Counter = 0; Counter < Entries.size(); ++Counter)
+        for(int Counter = 0; Counter < Entries.size(); ++Counter)
             // If entry was found, deleting from Entries and return.
             if(Entries[Counter].getName() == Name) {
                 Entries.erase(Entries.begin() + Counter);
@@ -108,7 +108,7 @@ void MenuTemplate::deleteEntry(const string Name) {
     }
 }
 
-void MenuTemplate::deleteEntry(const uint16_t Position) {
+void MenuTemplate::deleteEntry(const int Position) {
     try {
         // Testing, if Position to be deleted is valid. If not: exception.
         if(Position < 0 or Position >= Entries.size()) {
@@ -139,7 +139,7 @@ void MenuTemplate::editEntry(const string Name, const string Text) {
             throw string("Entry text must not be empty!");
 
         // Searching for entry to be edited.
-        for(uint16_t Counter = 0; Counter < Entries.size(); ++Counter)
+        for(int Counter = 0; Counter < Entries.size(); ++Counter)
             // If entry was found, setting new Text and return.
             if(Entries[Counter].getName() == Name) {
                 Entries[Counter].setText(Text);
@@ -155,7 +155,7 @@ void MenuTemplate::editEntry(const string Name, const string Text) {
     }
 }
 
-void MenuTemplate::editEntry(const string Name, const uint16_t Position) {
+void MenuTemplate::editEntry(const string Name, const int Position) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -171,7 +171,7 @@ void MenuTemplate::editEntry(const string Name, const uint16_t Position) {
         }
 
         // Searching for entry to be edited.
-        for(uint16_t Counter = 0; Counter < Entries.size(); ++Counter)
+        for(int Counter = 0; Counter < Entries.size(); ++Counter)
             // If entry was found, setting new Text and return.
             if(Entries[Counter].getName() == Name) {
                 // Creating copy of entry to be edited.
@@ -195,7 +195,7 @@ void MenuTemplate::editEntry(const string Name, const uint16_t Position) {
     }
 }
 
-void MenuTemplate::editEntry(const string Name, const string Text, const uint16_t Position) {
+void MenuTemplate::editEntry(const string Name, const string Text, const int Position) {
     // Calling editEntry with Name and Text.
     editEntry(Name, Text);
 
@@ -214,10 +214,10 @@ void MenuTemplate::renameEntry(const string Name, const string newName) {
             throw string("New entry name must not be empty!");
 
         bool Check = false;
-        int16_t Position;
+        int Position;
 
         // Searching for entry to be edited and testing if newName is unique.
-        for(uint16_t Counter = 0; Counter < Entries.size(); ++Counter) {
+        for(int Counter = 0; Counter < Entries.size(); ++Counter) {
             // If entry was found: incrementing Check.
             if(Entries[Counter].getName() == Name) {
                 Check = true;
@@ -254,7 +254,7 @@ void MenuTemplate::swapEntries(const string NameA, const string NameB) {
         if(NameA == NameB)
             throw string("Entry names must not be equal!\nTriggering entry name: " + NameA);
 
-        uint16_t CounterA;
+        int CounterA;
 
         // Searching for EntryA to be swapped.
         for(CounterA = 0; CounterA < Entries.size(); ++CounterA)
@@ -267,7 +267,7 @@ void MenuTemplate::swapEntries(const string NameA, const string NameB) {
             // Exception, if EntryA was not found.
             throw string("EntryA name was not found!\nTriggering entry name: " + NameA);
 
-        uint16_t CounterB;
+        int CounterB;
 
         // Searching for EntryB to be swapped.
         for(CounterB = 0; CounterB < Entries.size(); ++CounterB)
@@ -294,7 +294,7 @@ void MenuTemplate::swapEntries(const string NameA, const string NameB) {
     }
 }
 
-void MenuTemplate::swapEntries(const string NameA, const uint16_t PositionB) {
+void MenuTemplate::swapEntries(const string NameA, const int PositionB) {
     try {
         // Testing, if NameA is empty. If true: exception.
         if(NameA.empty())
@@ -308,7 +308,7 @@ void MenuTemplate::swapEntries(const string NameA, const uint16_t PositionB) {
             throw string("PositionA is not valid!\nTriggering entry position: " + Stream.str());
         }
 
-        uint16_t CounterA;
+        int CounterA;
 
         // Searching for EntryA to be swapped.
         for(CounterA = 0; CounterA < Entries.size(); ++CounterA)
@@ -344,12 +344,12 @@ void MenuTemplate::swapEntries(const string NameA, const uint16_t PositionB) {
     }
 }
 
-void MenuTemplate::swapEntries(const uint16_t PositionA, const string NameB) {
+void MenuTemplate::swapEntries(const int PositionA, const string NameB) {
     // Calling swapEntries with NameB and PositionA.
     swapEntries(NameB, PositionA);
 }
 
-void MenuTemplate::swapEntries(const uint16_t PositionA, const uint16_t PositionB) {
+void MenuTemplate::swapEntries(const int PositionA, const int PositionB) {
     try {
         // Testing, if PositionA is valid. If not: exception.
         if(PositionA < 0 or PositionA >= Entries.size()) {
@@ -399,7 +399,7 @@ void MenuTemplate::setCursor(const string Cursor) {
         if(Cursor.empty())
             throw string ("Cursor must not be empty!");
 
-        uint16_t Counter;
+        int Counter;
 
         // Testing, if cursor contains only spaces.
         for(Counter = 0; Counter < Cursor.length(); ++Counter)
@@ -418,7 +418,7 @@ void MenuTemplate::setCursor(const string Cursor) {
     }
 }
 
-void MenuTemplate::setCursorStartPosition(const uint16_t CursorStartPosition) {
+void MenuTemplate::setCursorStartPosition(const int CursorStartPosition) {
     try{
         // Testing, if there are more than one entries. If not: exception.
         if(Entries.size() < 2)
@@ -442,13 +442,13 @@ void MenuTemplate::setCursorStartPosition(const uint16_t CursorStartPosition) {
     }
 }
 
-uint16_t MenuTemplate::getCursorStartPosition() {
+int MenuTemplate::getCursorStartPosition() {
     return CursorStartPosition;
 }
 
 string MenuTemplate::displayGetName() {
     // Getting selected entry position.
-    int16_t Position = displayGetPosition();
+    int Position = displayGetPosition();
 
     // If selected position is -1 (error): returning emtpy string.
     if(Position == -1)
@@ -458,7 +458,7 @@ string MenuTemplate::displayGetName() {
     return Entries[Position].getName();
 }
 
-int16_t MenuTemplate::displayGetPosition() {
+int MenuTemplate::displayGetPosition() {
     try {
         // If there are no entries: exception.
         if(Entries.size() == 0)
@@ -469,7 +469,7 @@ int16_t MenuTemplate::displayGetPosition() {
             return 0;
 
         // Actual selected entry position is set to cursor start position.
-        uint16_t SelectedEntryPosition = CursorStartPosition;
+        int SelectedEntryPosition = CursorStartPosition;
 
         // Endless loop until return.
         while(true) {
@@ -484,18 +484,18 @@ int16_t MenuTemplate::displayGetPosition() {
             if(!Description.empty())
                 cout << Description << endl << endl;
 
-            for(uint16_t CounterA = 0; CounterA < Entries.size(); ++CounterA) {
+            for(int CounterA = 0; CounterA < Entries.size(); ++CounterA) {
                 if(CounterA == SelectedEntryPosition)
                     cout << Cursor;
                 else
-                    for(uint16_t CounterB = 0; CounterB < Cursor.length(); ++CounterB)
+                    for(int CounterB = 0; CounterB < Cursor.length(); ++CounterB)
                         cout << ' ';
 
                 cout << Entries[CounterA].getText() << endl;
             }
 
             // Getting pressed key and converting it into capital letter.
-            int8_t PressedKey = ExternFunctions::getChar();
+            char PressedKey = ExternFunctions::getChar();
 
             if(PressedKey == ENTRY_UP)
                 SelectedEntryPosition = (SelectedEntryPosition + Entries.size() - 1) % Entries.size();
@@ -518,7 +518,7 @@ int16_t MenuTemplate::displayGetPosition() {
     return -1;
 }
 
-uint16_t MenuTemplate::getNumberOfEntries() {
+int MenuTemplate::getNumberOfEntries() {
     return Entries.size();
 }
 } // end namespace
