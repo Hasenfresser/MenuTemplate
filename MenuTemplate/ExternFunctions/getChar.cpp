@@ -1,7 +1,7 @@
 /**
 *   @file       getChar.cpp
 *   @author     Hasenfresser
-*   @version    1.01
+*   @version    1.03
 *   @date       2017-02-08
 *
 *   @brief      Source file of getChar function.

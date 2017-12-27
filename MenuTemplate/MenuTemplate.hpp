@@ -1,8 +1,8 @@
 /**
  *  @file       MenuTemplate.hpp
  *  @author     Hasenfresser
- *  @version    1.01
- *  @date       2016-02-08
+ *  @version    1.03
+ *  @date       2016-12-28
  *
  *  @brief      Header file of MenuTemplate class.
  */
@@ -86,7 +86,7 @@ private:
          *  Entry name must be unique and not empty.
          *  Entry text must not be empty.
          */
-        Entry(const string Name, const string Text);
+        Entry(const string &Name, const string &Text);
 
         /**
          *  @brief      Default destructor.
@@ -100,7 +100,7 @@ private:
          *
          *  New entry name must be unique and not empty.
          */
-        void setName(const string Name);
+        void setName(const string &Name);
 
         /**
          *  @brief      Setter of Text.
@@ -109,7 +109,7 @@ private:
          *
          *  New entry text must not empty.
          */
-        void setText(const string Name);
+        void setText(const string &Name);
 
         /**
          *  @brief      Getter of Name.
@@ -187,7 +187,7 @@ private:
      *  New entry name must be unique and not empty.
      *  New entry text must not be empty.
      */
-    void addEntry(const string Name, const string Text);
+    void addEntry(const string &Name, const string &Text);
 
     /**
      *  @brief      Adds new entry to the menu.
@@ -200,7 +200,7 @@ private:
      *  New entry text must not be empty.
      *  New entry position must be a value from 0 to number of entries - 1. If set bigger, it will be added to the end.
      */
-    void addEntry(const string Name, const string Text, const int Position);
+    void addEntry(const string &Name, const string &Text, const int &Position);
 
     /**
      *  @brief      Deletes entry from menu by name.
@@ -209,7 +209,7 @@ private:
      *
      *  If entry name was not found, it will be not deleted.
      */
-    void deleteEntry(const string Name);
+    void deleteEntry(const string &Name);
 
     /**
      *  @brief      Deletes entry from menu by position
@@ -218,7 +218,7 @@ private:
      *
      *  If entry position was not found, it will be not deleted.
      */
-    void deleteEntry(const int Position);
+    void deleteEntry(const int &Position);
 
     /**
      *  @brief      Edits entry text.
@@ -228,7 +228,7 @@ private:
      *
      *  If entry name was not found or if new entry text is empty, it will be not edited.
      */
-    void editEntry(const string Name, const string Text);
+    void editEntry(const string &Name, const string &Text);
 
     /**
      *  @brief      Edits entry position.
@@ -239,7 +239,7 @@ private:
      *  New entry position must be a value from 0 to number of entries - 1.
      *  If entry name was not found or if new entry position is not valid, it will be not edited.
      */
-    void editEntry(const string Name, const int Position);
+    void editEntry(const string &Name, const int &Position);
 
     /**
      *  @brief      Edits entry text and position.
@@ -251,7 +251,7 @@ private:
      *  New entry position must be a value from 0 to number of entries - 1.
      *  If entry name was not found, if new entry text is empty or if new entry position is not valid, it will be not edited.
      */
-    void editEntry(const string Name, const string Text, const int Position);
+    void editEntry(const string &Name, const string &Text, const int &Position);
 
     /**
      *  @brief      Renames entry name.
@@ -261,7 +261,7 @@ private:
      *
      *  If entry name was not found, if new entry name is not unique or if new entry name is empty, it will be not renamed.
      */
-    void renameEntry(const string Name, const string newName);
+    void renameEntry(const string &Name, const string &newName);
 
     /**
      *  @brief      Swaps two entries by name.
@@ -271,7 +271,7 @@ private:
      *
      *  If entry name A or entry name B were not found found, they will be not swapped.
      */
-    void swapEntries(const string NameA, const string NameB);
+    void swapEntries(const string &NameA, const string &NameB);
 
     /**
      *  @brief      Swaps two entries by name and position.
@@ -281,7 +281,7 @@ private:
      *
      *  If entry name A or entry position B were not found found, they will be not swapped.
      */
-    void swapEntries(const string NameA, const int PositionB);
+    void swapEntries(const string &NameA, const int &PositionB);
 
     /**
      *  @brief      Swaps two entries by position and name.
@@ -291,7 +291,7 @@ private:
      *
      *  If entry position A or entry name B were not found found, they will be not swapped.
      */
-    void swapEntries(const int PositionA, const string NameB);
+    void swapEntries(const int &PositionA, const string &NameB);
 
     /**
      *  @brief      Swaps two entries by position.
@@ -301,7 +301,7 @@ private:
      *
      *  If entry position A or entry position B were not found found, they will be not swapped.
      */
-    void swapEntries(const int PositionA, const int PositionB);
+    void swapEntries(const int &PositionA, const int &PositionB);
 
     /**
      *  @brief      Sets Cursor.
@@ -310,7 +310,7 @@ private:
      *
      *  If cursor is empty or contains only spaces, it will not be set.
      */
-    void setCursor(const string Cursor);
+    void setCursor(const string &Cursor);
 
     /**
      *  @brief      Sets startposition of cursor.
@@ -319,7 +319,7 @@ private:
      *
      *  If cursor start position is not a value from 0 to number of entries - 1, it will not be set.
      */
-    void setCursorStartPosition(const int CursorStartPosition);
+    void setCursorStartPosition(const int &CursorStartPosition);
 
     /**
      *  @brief      Returns actual cursor startposition.

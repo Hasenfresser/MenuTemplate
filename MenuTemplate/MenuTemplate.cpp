@@ -1,8 +1,8 @@
 /**
  *  @file       MenuTemplate.cpp
  *  @author     Hasenfresser
- *  @version    1.01
- *  @date       2016-02-08
+ *  @version    1.03
+ *  @date       2016-12-28
  *
  *  @brief      Source file of MenuTemplate class.
  */
@@ -51,12 +51,12 @@ void MenuTemplate::clearScreen() {
     #endif
 }
 
-void MenuTemplate::addEntry(const string Name, const string Text) {
+void MenuTemplate::addEntry(const string &Name, const string &Text) {
     // Calling addEntry with new entry at end (position = number of entries) of menu.
     addEntry(Name, Text, Entries.size());
 }
 
-void MenuTemplate::addEntry(const string Name, const string Text, const int Position) {
+void MenuTemplate::addEntry(const string &Name, const string &Text, const int &Position) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -85,7 +85,7 @@ void MenuTemplate::addEntry(const string Name, const string Text, const int Posi
     }
 }
 
-void MenuTemplate::deleteEntry(const string Name) {
+void MenuTemplate::deleteEntry(const string &Name) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -108,7 +108,7 @@ void MenuTemplate::deleteEntry(const string Name) {
     }
 }
 
-void MenuTemplate::deleteEntry(const int Position) {
+void MenuTemplate::deleteEntry(const int &Position) {
     try {
         // Testing, if Position to be deleted is valid. If not: exception.
         if(Position < 0 or Position >= Entries.size()) {
@@ -128,7 +128,7 @@ void MenuTemplate::deleteEntry(const int Position) {
     }
 }
 
-void MenuTemplate::editEntry(const string Name, const string Text) {
+void MenuTemplate::editEntry(const string &Name, const string &Text) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -155,7 +155,7 @@ void MenuTemplate::editEntry(const string Name, const string Text) {
     }
 }
 
-void MenuTemplate::editEntry(const string Name, const int Position) {
+void MenuTemplate::editEntry(const string &Name, const int &Position) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -195,7 +195,7 @@ void MenuTemplate::editEntry(const string Name, const int Position) {
     }
 }
 
-void MenuTemplate::editEntry(const string Name, const string Text, const int Position) {
+void MenuTemplate::editEntry(const string &Name, const string &Text, const int &Position) {
     // Calling editEntry with Name and Text.
     editEntry(Name, Text);
 
@@ -203,7 +203,7 @@ void MenuTemplate::editEntry(const string Name, const string Text, const int Pos
     editEntry(Name, Position);
 }
 
-void MenuTemplate::renameEntry(const string Name, const string newName) {
+void MenuTemplate::renameEntry(const string &Name, const string &newName) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -240,7 +240,7 @@ void MenuTemplate::renameEntry(const string Name, const string newName) {
     }
 }
 
-void MenuTemplate::swapEntries(const string NameA, const string NameB) {
+void MenuTemplate::swapEntries(const string &NameA, const string &NameB) {
     try {
         // Testing, if NameA is empty. If true: exception.
         if(NameA.empty())
@@ -294,7 +294,7 @@ void MenuTemplate::swapEntries(const string NameA, const string NameB) {
     }
 }
 
-void MenuTemplate::swapEntries(const string NameA, const int PositionB) {
+void MenuTemplate::swapEntries(const string &NameA, const int &PositionB) {
     try {
         // Testing, if NameA is empty. If true: exception.
         if(NameA.empty())
@@ -344,12 +344,12 @@ void MenuTemplate::swapEntries(const string NameA, const int PositionB) {
     }
 }
 
-void MenuTemplate::swapEntries(const int PositionA, const string NameB) {
+void MenuTemplate::swapEntries(const int &PositionA, const string &NameB) {
     // Calling swapEntries with NameB and PositionA.
     swapEntries(NameB, PositionA);
 }
 
-void MenuTemplate::swapEntries(const int PositionA, const int PositionB) {
+void MenuTemplate::swapEntries(const int &PositionA, const int &PositionB) {
     try {
         // Testing, if PositionA is valid. If not: exception.
         if(PositionA < 0 or PositionA >= Entries.size()) {
@@ -389,7 +389,7 @@ void MenuTemplate::swapEntries(const int PositionA, const int PositionB) {
     }
 }
 
-void MenuTemplate::setCursor(const string Cursor) {
+void MenuTemplate::setCursor(const string &Cursor) {
     try {
         // Testing, if new Cursor equals old Cursor. If true: return.
         if(this->Cursor == Cursor)
@@ -418,7 +418,7 @@ void MenuTemplate::setCursor(const string Cursor) {
     }
 }
 
-void MenuTemplate::setCursorStartPosition(const int CursorStartPosition) {
+void MenuTemplate::setCursorStartPosition(const int &CursorStartPosition) {
     try{
         // Testing, if there are more than one entries. If not: exception.
         if(Entries.size() < 2)

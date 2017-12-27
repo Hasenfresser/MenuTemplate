@@ -1,8 +1,8 @@
 /**
  *  @file       Entry.cpp
  *  @author     Hasenfresser
- *  @version    1.01
- *  @date       2016-02-08
+ *  @version    1.03
+ *  @date       2016-12-28
  *
  *  @brief      Source file of subclass Entry.
  */
@@ -19,15 +19,15 @@ using std::endl;
 
 namespace MenuTemplate {
 
-MenuTemplate::Entry::Entry(string Name, string Text) : Name(Name), Text(Text) { }
+MenuTemplate::Entry::Entry(const string &Name, const string &Text) : Name(Name), Text(Text) { }
 
 MenuTemplate::Entry::~Entry() { }
 
-void MenuTemplate::Entry::setName(string Name) {
+void MenuTemplate::Entry::setName(const string &Name) {
     this->Name = Name;
 }
 
-void MenuTemplate::Entry::setText(string Text) {
+void MenuTemplate::Entry::setText(const string &Text) {
     this->Text = Text;
 }
 
