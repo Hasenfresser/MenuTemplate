@@ -1,15 +1,12 @@
-/**
- *  @file       MenuTemplate.cpp
- *  @author     Hasenfresser
- *  @version    1.03
- *  @date       2016-12-28
- *
- *  @brief      Source file of MenuTemplate class.
- */
+//!
+//! @file       MenuTemplate.cpp
+//! @author     Hasenfresser
+//! @version    1.04
+//! @date       2017-12-28
+//!
+//! @brief      Source file of MenuTemplate class.
+//!
 
-// include guard
-#if !defined MENUTEMPLATE_CPP
-#define MENUTEMPLATE_CPP
 
 #include "MenuTemplate.hpp"
 #include "ExternFunctions/getChar.hpp"
@@ -522,5 +519,3 @@ int MenuTemplate::getNumberOfEntries() {
     return Entries.size();
 }
 } // end namespace
-
-#endif // !defined MENUTEMPLATE_CPP

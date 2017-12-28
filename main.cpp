@@ -1,11 +1,11 @@
-/**
- *  @file       main.cpp
- *  @author     Hasenfresser
- *  @version    1.03
- *  @date       2016-12-28
- *
- *  @brief      Main file of the project. Just for testing purposes.
- */
+//!
+//! @file       main.cpp
+//! @author     Hasenfresser
+//! @version    1.04
+//! @date       2017-12-28
+//!
+//! @brief      Main file of the project. Just for testing purposes.
+//!
 
 #include "MenuTemplate/MenuTemplate.hpp"
 #include <iostream>
@@ -13,14 +13,16 @@
 using std::cout;
 using std::endl;
 
-/**
- *   @brief      Main function of MenuTemplate.
- */
+//!
+//! @brief  Main function of MenuTemplate.
+//!
+//! @return int
+//!
 int main() {
     // Example menu for a game:
     MenuTemplate::MenuTemplate MenuA;
 
-    MenuA.Title = "\t\tMenuTemplate 1.03";
+    MenuA.Title = "\t\tMenuTemplate 1.04";
     MenuA.Description = "Choose with UP and DOWN, select with RETURN!";
     MenuA.setCursor("> ");
 

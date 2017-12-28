@@ -1,11 +1,11 @@
-/**
-*   @file       getChar.cpp
-*   @author     Hasenfresser
-*   @version    1.03
-*   @date       2017-02-08
-*
-*   @brief      Source file of getChar function.
-*/
+//!
+//! @file       getChar.cpp
+//! @author     Hasenfresser
+//! @version    1.04
+//! @date       2017-12-28
+//!
+//! @brief      Source file of getChar function.
+//!
 
 #include "getChar.hpp"
 
