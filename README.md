@@ -2,9 +2,12 @@
 An easy template for simple menus in Linux and Windows terminals.
 
 
-## Actual version 1.03 (2017-12-28):
-Changed all parameters to references. Fixed some small issues in Doxygen file.
+## Actual version 1.04 (2017-12-28):
+Changed Doxygen comments to C++ style.
+Removed old include guards and replaced them with #pragma once.
 
+### Version 1.03:
+Changed all parameters to references. Fixed some small issues in Doxygen file.
 
 ### Version 1.02:
 Data types normalized. Fixed small issues at WINDOWS build in function getChar().
